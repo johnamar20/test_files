@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import Eventreg from '../views/Eventreg';
+import styled from 'styled-components';
 // react-bootstrap components
 import {
   Badge,
@@ -19,9 +20,11 @@ function TableList() {
     <>
       <Container fluid>
         <Row>
-        <Button variant="primary" size="md" block>
-    <Link to="/Eventreg"> CREATE EVENT </Link>
-  </Button>
+       
+    <Link to="/Eventreg"> <Button variant="primary" size="lg" > 
+    <i class="fa fa-plus" aria-hidden="true"></i>
+     </Button> </Link>
+  
           {/* <Col md="12">
             <Card className="strpied-tabled-with-hover">
               <Card.Header>
