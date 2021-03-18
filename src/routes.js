@@ -43,6 +43,7 @@ const dashboardRoutes = [
     component: UserProfile,
     layout: "/admin",
   },
+
   
 ];
 

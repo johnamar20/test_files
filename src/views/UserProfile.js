@@ -1,5 +1,10 @@
 import React from "react";
-
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
+import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 // react-bootstrap components
 import {
   Badge,
@@ -11,33 +16,40 @@ import {
   Container,
   Row,
   Col,
+  InputGroup,
+  FormControl,
+  Dropdown,
 } from "react-bootstrap";
 
 function User() {
+   const View=styled.div`
+   font-size:14px;
+   padding:4px;
+   position:relative;
+   left:20px;
+   border:none;
+   `
+  
   return (
     <>
+      <View> <Link to="/Userreg"> <Button variant="primary" size="sm" > 
+
+
+      VIEW USER 
+     </Button> </Link> </View>  
+
       <Container fluid>
         <Row>
           <Col md="8">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Edit Profile</Card.Title>
+                <Card.Title as="h4"><center>USER REGISTER</center></Card.Title>   <hr></hr>
               </Card.Header>
               <Card.Body>
                 <Form>
                   <Row>
-                    <Col className="pr-1" md="5">
-                      <Form.Group>
-                        <label>Company (disabled)</label>
-                        <Form.Control
-                          defaultValue="Creative Code Inc."
-                          disabled
-                          placeholder="Company"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="px-1" md="3">
+
+                    <Col className="px-3" md="6">
                       <Form.Group>
                         <label>Username</label>
                         <Form.Control
@@ -62,95 +74,117 @@ function User() {
                   <Row>
                     <Col className="pr-1" md="6">
                       <Form.Group>
-                        <label>First Name</label>
+                        <label>DOB</label>
                         <Form.Control
-                          defaultValue="Mike"
-                          placeholder="Company"
-                          type="text"
+                          defaultValue=""
+                          placeholder="DOB"
+                          type="date"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                     <Col className="pl-1" md="6">
                       <Form.Group>
-                        <label>Last Name</label>
+                        <label>CONTACT</label>
                         <Form.Control
                           defaultValue="Andrew"
-                          placeholder="Last Name"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="12">
-                      <Form.Group>
-                        <label>Address</label>
-                        <Form.Control
-                          defaultValue="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                          placeholder="Home Address"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pr-1" md="4">
-                      <Form.Group>
-                        <label>City</label>
-                        <Form.Control
-                          defaultValue="Mike"
-                          placeholder="City"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="px-1" md="4">
-                      <Form.Group>
-                        <label>Country</label>
-                        <Form.Control
-                          defaultValue="Andrew"
-                          placeholder="Country"
-                          type="text"
-                        ></Form.Control>
-                      </Form.Group>
-                    </Col>
-                    <Col className="pl-1" md="4">
-                      <Form.Group>
-                        <label>Postal Code</label>
-                        <Form.Control
-                          placeholder="ZIP Code"
+                          placeholder="Mobile Number"
                           type="number"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                   </Row>
                   <Row>
-                    <Col md="12">
+                    <Col className="pr-1" md="12">
                       <Form.Group>
-                        <label>About Me</label>
+                        <label>Location</label>
                         <Form.Control
-                          cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                          that two seat Lambo."
-                          placeholder="Here can be your description"
-                          rows="4"
-                          as="textarea"
+                          defaultValue="ERODE"
+                          placeholder="Location"
+                          type="text"
+                        ></Form.Control>
+                      </Form.Group>
+                    </Col>
+                    </Row>
+                  <Row>
+                    <Col>
+                  <Dropdown>
+  <Dropdown.Toggle variant="danger" id="dropdown-basic">
+    Dropdown
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Interest</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">User-Type</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown></Col>
+                    </Row>
+               
+                  <Row>
+                    <Col className="pr-1" md="4">
+                      <Form.Group>
+                        <label>Sports</label>
+                        <Form.Control
+                          defaultValue=""
+                          placeholder="SPORTS"
+                          type="text"
+                        ></Form.Control>
+                      </Form.Group>
+                    </Col>
+                    <Col className="px-1" md="4">
+                      <Form.Group>
+                        <label>Interest</label>
+                        <Form.Control
+                          defaultValue=""
+                          placeholder="Interest"
+                          type="text"
+                        ></Form.Control>
+                      </Form.Group>
+                    </Col>
+                    <Col className="pl-1" md="4">
+                      <Form.Group>
+                        <label>Acheivement</label>
+                        <Form.Control
+                          placeholder="Acheivement"
+                          type="text"
                         ></Form.Control>
                       </Form.Group>
                     </Col>
                   </Row>
+                 
+                <Row>
+                <Col className="pl-4" md="3">                       
+
+                <FormLabel component="legend">Gender</FormLabel>
+      <RadioGroup aria-label="gender" name="gender1">
+        <FormControlLabel value="female" control={<Radio />} label="Female" />
+        <FormControlLabel value="male" control={<Radio />} label="Male" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
+      </RadioGroup>    
+      </Col>
+                  </Row>
+                  <Row>
                   <Button
-                    className="btn-fill pull-right"
+                  >
+                    <input
+                     type="file"
+                      
+                   />
+                  </Button>
+                    </Row>
+                  <Row>
+                    <Col  className="px-4" md="4" >
+                  <Button
+                    className="btn-fill "
                     type="submit"
                     variant="info"
                   >
                     Update Profile
-                  </Button>
+                  </Button></Col></Row>
                   <div className="clearfix"></div>
                 </Form>
               </Card.Body>
             </Card>
-          </Col>
+          </Col><br />
           <Col md="4">
             <Card className="card-user">
               <div className="card-image">
@@ -180,33 +214,8 @@ function User() {
                   I'm in that two seat Lambo"
                 </p>
               </Card.Body>
-              <hr></hr>
-              <div className="button-container mr-auto ml-auto">
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-twitter"></i>
-                </Button>
-                <Button
-                  className="btn-simple btn-icon"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  variant="link"
-                >
-                  <i className="fab fa-google-plus-square"></i>
-                </Button>
-              </div>
+           
+           
             </Card>
           </Col>
         </Row>

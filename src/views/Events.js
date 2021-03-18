@@ -1,30 +1,139 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import Eventreg from '../views/Eventreg';
-import styled from 'styled-components';
 // react-bootstrap components
-import {
-  Badge,
-  Button,
-  Card,
-  Navbar,
-  Nav,
-  Table,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import {Form,Row,Col,Button,Jumbotron,type,Dropdown,DropdownButton,Container} from 'react-bootstrap'
+import TextField from '@material-ui/core/TextField';
+import styled from 'styled-components';
+
 
 function TableList() {
   return (
     <>
-      <Container fluid>
-        <Row>
+  <Container >     
+       <Row>
+        <Col md="12">
        
-    <Link to="/Eventreg"> <Button variant="primary" size="lg" > 
-    <i class="fa fa-plus" aria-hidden="true"></i>
-     </Button> </Link>
+    <Link to="/Eventreg"> <Button variant="primary" size="md" > 
+VIEW EVENT     </Button> </Link>
+     <div>
+       
+        <Container col-sm-3> 
+            <center><b><h3>ADD EVENT</h3></b></center>
+            <Jumbotron >
+            <Form.Label>TOURNAMENT NAME</Form.Label>
+             <Form.Control type="text" placeholder="" required/>
+             <Form.Label>DATE OF THE EVENT</Form.Label>
+             <Form.Control type="date" placeholder=""  />
+             <Form.Label>EVENT START FROM (TIME)</Form.Label>
+             <Form.Control type="time" placeholder="" />
+             <Form.Label>EVENT VENUE</Form.Label>
+             <Form.Control type="text" placeholder="" />
+             <Form.Label>LAST DATE REGISTRATION</Form.Label>
+             <Form.Control type="date" placeholder="" />
+             <Form.Label>EVENT DESCRIPTION</Form.Label><br />
+             <Form.Control as="textarea" rows={3} />
+             {['checkbox'].map((type) => (
+              <div key={``} className="mb-3">
+                <Form.Check 
+                custom
+                id={`custom-${type}`}
+                 label={`INDUVIDUAL`}
+                />  </div> ))}
+                {['checkbox'].map((type) => (
+                 <div key={`custom-inline-${type}`} className="mb-3">
+                    <Form.Check
+                    custom
+                    inline
+                    label="GROUP"
+                    type={type}
+                    id={`custom-inline-${type}-1`}
+              />  </div> ))}
+                   <div> <TextField id="outlined-basic" label="SET LIMIT" variant="outlined" /></div>
+                    
+                    <b><h5>ORGANISER INFO</h5></b>
+                    <Form.Label>NAME</Form.Label>
+                    <Form.Control type="text" placeholder="" />
+                    <Form.Label>EMAIL</Form.Label>
+                    <Form.Control type="email" placeholder="" />
+                    <br />
+                   <b><h5>ORGANISER ACCOUNT DETAILS</h5></b>
+                    <Form.Label>ACCOUNT NUMBER</Form.Label>
+                    <Form.Control type="text" placeholder="" />
+                    <Form.Label>IFSC CODE</Form.Label>
+                    <Form.Control type="text" placeholder="" />
+                    <Form.Label> ACCOUNT NAME</Form.Label>
+                    <Form.Control type="text" placeholder="" /><br />
+                    <h5>FEE  DETAILS</h5>
+
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" /> 
+
+                 <label class="form-check-label" for="flexRadioDefault1">
+                  TOTAL FEE
+                 </label>
+                    </div>
+                    <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" color="danger"/> 
+
+                    <label class="form-check-label" for="flexRadioDefault1">
+                     SPITTED FEE
+                    </label>
+                    </div>
+                    <br/>
+                    <div><Form.Label> TOTAL FEE AMOUNT </Form.Label>
+                    <Form.Control type="text" placeholder="" /><br /></div>
+                    <Form.Label> SPITTED FEE AMOUNT </Form.Label>
+                 <div class="container">
+                     <div class="row">
+                     <div class="col-6 col-sm-3 col-md-6"><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="NAME"/>
+                </div></div>
+                     <div class="col-6 col-sm-3 col-md-6"><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="AMOUNT"/>
+                </div></div>
+                </div> </div>
+                <div class="container">
+                     <div class="row">
+                     <div class="col-6 col-sm-3 col-md-6"><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="NAME"/>
+                </div></div>
+                     <div class="col-6 col-sm-3 col-md-6"><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="AMOUNT"/>
+                </div></div>
+                </div> </div>  <div class="container">
+                     <div class="row">
+                     <div class="col-6 col-sm-3 col-md-6"><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="NAME"/>
+                </div></div>
+                     <div class="col-6 col-sm-3 col-md-6"><div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="AMOUNT"/>
+                </div></div>
+                </div> </div>
+                
+                <DropdownButton id="dropdown-basic-button" variant="danger" title="GENDER">
+                  <Dropdown.Item href="#/action-1">MALE</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">FEMALE</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">BOTH</Dropdown.Item>
+                </DropdownButton><br />
+                <button type="button" class="btn btn-danger btn-lg btn-block">SUBMIT</button>
+
   
+
+ 
+
+
+                    
+
+
+
+                
+            
+            </Jumbotron>
+
+
+            </Container>
+        </div>
+        </Col>
           {/* <Col md="12">
             <Card className="strpied-tabled-with-hover">
               <Card.Header>
