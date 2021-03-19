@@ -26,7 +26,7 @@ function User() {
               <Card.Body>
                 <MDBContainer>
                   <MDBRow>
-                    <MDBCol md="6">
+                    <MDBCol md="8">
                       <form>
                         <label
                           htmlFor="defaultFormRegisterNameEx"
@@ -106,16 +106,7 @@ function User() {
                           className="form-control"
                           required="true"
                         />
-                      </form>
-                    </MDBCol>
-                  </MDBRow>
-                </MDBContainer>
-                <MDBContainer
-                  style={{ marginLeft: "320px", marginTop: "-570px" }}
-                >
-                  <MDBRow>
-                    <MDBCol md="6">
-                      <form>
+
                         <label
                           htmlFor="defaultFormRegisterNameEx"
                           className="grey-text"
@@ -210,7 +201,7 @@ function User() {
                         </select>
 
                         <div className="text-center mt-4">
-                          <MDBBtn outline color="unique" type="submit">
+                          <MDBBtn outline color="danger" type="submit">
                             Create EVENT
                           </MDBBtn>
                           <br />
