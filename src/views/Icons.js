@@ -14,16 +14,6 @@ const Upgrade = (props) => {
   const data_panel = {
     columns: [
       {
-        label: <MDBInput label=" " type="checkbox" id="checkbox5" />,
-        field: "check",
-        sort: "asc",
-      },
-      {
-        label: "id",
-        field: "first",
-        sort: "asc",
-      },
-      {
         label: "Name",
         field: "first",
         sort: "asc",
@@ -56,7 +46,6 @@ const Upgrade = (props) => {
     ],
     rows: [
       {
-        check: <MDBInput label=" " type="checkbox" id="checkbox6" />,
         id: 1,
         Name: "Gowtham",
         Email: "Otto@gmail.com",
