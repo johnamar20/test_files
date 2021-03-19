@@ -14,6 +14,14 @@ import {
   Col,
 } from "react-bootstrap";
 function User() {
+  const hiddenFileInput = React.useRef(null);
+  const handleClick = (event) => {
+    hiddenFileInput.current.click();
+  };
+  const handleChange = (event) => {
+    const fileUploaded = event.target.files[0];
+    props.handleFile(fileUploaded);
+  };
   return (
     <>
       <Container fluid>
@@ -199,6 +207,18 @@ function User() {
                           <option value="3"> Female</option>
                           <option value="3"> Others</option>
                         </select>
+                        <br />
+                        <div style={{ marginTop: "10px", border: "none" }}>
+                          <button type="file" onClick={handleClick}>
+                            Upload Event Pic
+                          </button>
+                        </div>
+                        <input
+                          type="file"
+                          ref={hiddenFileInput}
+                          onChange={handleChange}
+                          style={{ display: "none" }}
+                        />
 
                         <div className="text-center mt-4">
                           <MDBBtn outline color="danger" type="submit">
