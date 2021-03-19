@@ -16,12 +16,13 @@
 
 */
 import React from "react";
-  
+
 import ReactDOM from "react-dom";
-import Eventreg from '../src/views/Eventreg';
-import Userreg from '../src/views/Userreg';
-
-
+import Eventreg from "../src/views/Eventreg";
+import Userreg from "../src/views/Userreg";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
@@ -36,12 +37,14 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Route path="/Eventreg"><Eventreg/></Route>
-      <Route path="/Userreg"><Userreg/></Route>
-
+      <Route path="/Eventreg">
+        <Eventreg />
+      </Route>
+      <Route path="/Userreg">
+        <Userreg />
+      </Route>
 
       <Redirect from="/" to="/admin/dashboard" />
-
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

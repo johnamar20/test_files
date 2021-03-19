@@ -1,168 +1,103 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import Eventreg from '../views/Eventreg';
-import styled from 'styled-components';
-// react-bootstrap components
 import {
-  Badge,
-  Button,
-  Card,
-  Navbar,
-  Nav,
-  Table,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+  MDBCard,
+  MDBCardBody,
+  MDBCardHeader,
+  MDBInput,
+  MDBBtn,
+  MDBTable,
+  MDBTableBody,
+  MDBTableHead,
+} from "mdbreact";
 
-function Icons() {
+const Upgrade = (props) => {
+  const data_panel = {
+    columns: [
+      {
+        label: <MDBInput label=" " type="checkbox" id="checkbox5" />,
+        field: "check",
+        sort: "asc",
+      },
+      {
+        label: "id",
+        field: "first",
+        sort: "asc",
+      },
+      {
+        label: "Name",
+        field: "first",
+        sort: "asc",
+      },
+      {
+        label: "Email",
+        field: "last",
+        sort: "asc",
+      },
+      {
+        label: "Mobile Number",
+        field: "username",
+        sort: "asc",
+      },
+      {
+        label: "Dob",
+        field: "username2",
+        sort: "asc",
+      },
+      {
+        label: "Gender",
+        field: "username3",
+        sort: "asc",
+      },
+      {
+        label: "Organiser",
+        field: "username4",
+        sort: "asc",
+      },
+    ],
+    rows: [
+      {
+        check: <MDBInput label=" " type="checkbox" id="checkbox6" />,
+        id: 1,
+        Name: "Gowtham",
+        Email: "Otto@gmail.com",
+        Mobile: "123456789",
+        Dob: "01/01/1990",
+        Gender: "Male",
+        Organiser: "player",
+      },
+    ],
+  };
+
   return (
-    <>
-      <Container fluid>
-        <Row>
-       
-    <Link to="/Eventreg"> <Button variant="primary" size="lg" > 
-    <i class="fa fa-plus" aria-hidden="true"></i>
-     </Button> </Link>
-  
-          {/* <Col md="12">
-            <Card className="strpied-tabled-with-hover">
-              <Card.Header>
-                <Card.Title as="h4">Striped Table with Hover</Card.Title>
-                <p className="card-category">
-                  Here is a subtitle for this table
-                </p>
-              </Card.Header>
-              <Card.Body className="table-full-width table-responsive px-0">
-                <Table className="table-hover table-striped">
-                  <thead>
-                    <tr>
-                      <th className="border-0">ID</th>
-                      <th className="border-0">Name</th>
-                      <th className="border-0">Salary</th>
-                      <th className="border-0">Country</th>
-                      <th className="border-0">City</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Dakota Rice</td>
-                      <td>$36,738</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Minerva Hooper</td>
-                      <td>$23,789</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Sage Rodriguez</td>
-                      <td>$56,142</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Philip Chaney</td>
-                      <td>$38,735</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Doris Greene</td>
-                      <td>$63,542</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Mason Porter</td>
-                      <td>$78,615</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Card.Body>
-            </Card>
-          </Col> */}
-          {/* <Col md="12">
-            <Card className="card-plain table-plain-bg">
-              <Card.Header>
-                <Card.Title as="h4">Table on Plain Background</Card.Title>
-                <p className="card-category">
-                  Here is a subtitle for this table
-                </p>
-              </Card.Header>
-              <Card.Body className="table-full-width table-responsive px-0">
-                <Table className="table-hover">
-                  <thead>
-                    <tr>
-                      <th className="border-0">ID</th>
-                      <th className="border-0">Name</th>
-                      <th className="border-0">Salary</th>
-                      <th className="border-0">Country</th>
-                      <th className="border-0">City</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Dakota Rice</td>
-                      <td>$36,738</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Minerva Hooper</td>
-                      <td>$23,789</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Sage Rodriguez</td>
-                      <td>$56,142</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>Philip Chaney</td>
-                      <td>$38,735</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td>Doris Greene</td>
-                      <td>$63,542</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td>Mason Porter</td>
-                      <td>$78,615</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Card.Body>
-            </Card>
-          </Col> */}
-        </Row>
-      </Container>
-    </>
-  );
-}
+    <MDBCard narrow>
+      <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-4 mb-3">
+        <div></div>
+        <a href="#" className="white-text mx-3">
+          Table
+        </a>
+        <div></div>
+      </MDBCardHeader>
+      <MDBCardBody cascade>
+        <MDBTable btn fixed>
+          <MDBTableHead columns={data_panel.columns} />
 
-export default Icons;
+          <MDBTableBody rows={data_panel.rows} />
+
+          <div
+            style={{
+              position: "absolute",
+              right: "30px",
+              top: "120px",
+            }}
+          >
+            <button>
+              <i className="fas fa-pencil-alt mt-0"></i>
+            </button>
+          </div>
+        </MDBTable>
+      </MDBCardBody>
+    </MDBCard>
+  );
+};
+
+export default Upgrade;

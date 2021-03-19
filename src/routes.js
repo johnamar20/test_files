@@ -18,9 +18,9 @@
 import Dashboard from "views/Dashboard.js";
 import UserProfile from "views/UserProfile.js";
 import Events from "views/Events.js";
+import icons from "views/Icons.js";
 
 const dashboardRoutes = [
-  
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -28,7 +28,7 @@ const dashboardRoutes = [
     component: Dashboard,
     layout: "/admin",
   },
-  
+
   {
     path: "/Events",
     name: "EVENTS",
@@ -43,8 +43,13 @@ const dashboardRoutes = [
     component: UserProfile,
     layout: "/admin",
   },
-
-  
+  {
+    path: "/Icons",
+    name: "Userlist",
+    icon: "nc-icon ",
+    component: icons,
+    layout: "/admin",
+  },
 ];
 
 export default dashboardRoutes;
