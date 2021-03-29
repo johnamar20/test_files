@@ -48,6 +48,11 @@ const Upgrade = (props) => {
         field: "username4",
         sort: "asc",
       },
+      {
+        label: "Edit",
+        field: "username4",
+        sort: "asc",
+      },
     ],
     rows: [
       {
@@ -58,6 +63,45 @@ const Upgrade = (props) => {
         Dob: "01/01/1990",
         Gender: "Male",
         Organiser: "player",
+        Icons: (
+          <Link to="/EditUser">
+            <button>
+              <i className="fas fa-pencil-alt mt-0"></i>{" "}
+            </button>
+          </Link>
+        ),
+      },
+      {
+        id: 2,
+        Name: "Gowtham",
+        Email: "Otto@gmail.com",
+        Mobile: "123456789",
+        Dob: "01/01/1990",
+        Gender: "Male",
+        Organiser: "player",
+        Icons: (
+          <Link to="/EditUser">
+            <button>
+              <i className="fas fa-pencil-alt mt-0"></i>
+            </button>
+          </Link>
+        ),
+      },
+      {
+        id: 3,
+        Name: "Gowtham",
+        Email: "Otto@gmail.com",
+        Mobile: "123456789",
+        Dob: "01/01/1990",
+        Gender: "Male",
+        Organiser: "player",
+        Icons: (
+          <Link to="/EditUser">
+            <button>
+              <i className="fas fa-pencil-alt mt-0"></i>
+            </button>
+          </Link>
+        ),
       },
     ],
   };
@@ -82,13 +126,7 @@ const Upgrade = (props) => {
               right: "30px",
               top: "120px",
             }}
-          >
-            <Link to="/EditUser">
-              <button>
-                <i className="fas fa-pencil-alt mt-0"></i>
-              </button>
-            </Link>
-          </div>
+          ></div>
         </MDBTable>
       </MDBCardBody>
     </MDBCard>

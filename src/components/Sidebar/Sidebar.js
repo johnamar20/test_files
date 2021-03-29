@@ -22,16 +22,12 @@ import { Nav } from "react-bootstrap";
 
 import logo from "assets/img/reactlogo.png";
 
-
-
 function Sidebar({ color, image, routes }) {
   const location = useLocation();
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
 
-
- 
   return (
     <div className="sidebar" data-image={image} data-color={color}>
       <div
@@ -42,25 +38,24 @@ function Sidebar({ color, image, routes }) {
       />
       <div className="sidebar-wrapper">
         <div className="logo d-flex align-items-center justify-content-start">
-          <a
-            href="#"
-            className="simple-text logo-mini mx-1"
-          >
+          <a href="#" className="simple-text logo-mini mx-1">
             <div className="logo-img">
-              <img  style={{width:"29px"}}
+              <img
+                style={{ width: "29px" }}
                 src={require("assets/img/reactlogo.png").default}
-                alt="..." 
-               />
+                alt="..."
+              />
             </div>
           </a>
           <a className="simple-text" href="#">
-          <div className="image"  >
-              <img  style={{width:"180px",marginLeft:"7px"}}
+            <div className="image">
+              <img
+                style={{ width: "180px", marginLeft: "7px" }}
                 src={require("assets/img/img.png").default}
-                alt="..." 
-               />
-               
-            </div>          </a>
+                alt="..."
+              />
+            </div>{" "}
+          </a>
         </div>
         <Nav>
           {routes.map((prop, key) => {
