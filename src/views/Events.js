@@ -219,7 +219,6 @@ function User() {
                           onChange={handleChange}
                           style={{ display: "none" }}
                         />
-
                         <div className="text-center mt-4">
                           <MDBBtn outline color="danger" type="submit">
                             Create EVENT

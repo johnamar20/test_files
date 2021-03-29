@@ -18,8 +18,7 @@
 import React from "react";
 
 import ReactDOM from "react-dom";
-import Eventreg from "../src/views/Eventreg";
-import Userreg from "../src/views/Userreg";
+import EditUser from "./views/EditPRofile";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
@@ -37,11 +36,9 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-      <Route path="/Eventreg">
-        <Eventreg />
-      </Route>
-      <Route path="/Userreg">
-        <Userreg />
+
+      <Route path="/EditUser">
+        <EditUser />
       </Route>
 
       <Redirect from="/" to="/admin/dashboard" />

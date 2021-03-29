@@ -3,16 +3,21 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardHeader,
-  MDBInput,
-  MDBBtn,
   MDBTable,
   MDBTableBody,
   MDBTableHead,
 } from "mdbreact";
+import { Link } from "react-router-dom";
+import EditUser from "./EditPRofile";
 
 const Upgrade = (props) => {
   const data_panel = {
     columns: [
+      {
+        label: "Id",
+        field: "first",
+        sort: "asc",
+      },
       {
         label: "Name",
         field: "first",
@@ -59,8 +64,7 @@ const Upgrade = (props) => {
 
   return (
     <MDBCard narrow>
-      <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-4 mb-3">
-        <div></div>
+      <MDBCardHeader className="view view-cascade gradient-card-header blue-gradient d-flex justify-content-between align-items-center py-2 mx-0 mb-3">
         <a href="#" className="white-text mx-3">
           Table
         </a>
@@ -79,9 +83,11 @@ const Upgrade = (props) => {
               top: "120px",
             }}
           >
-            <button>
-              <i className="fas fa-pencil-alt mt-0"></i>
-            </button>
+            <Link to="/EditUser">
+              <button>
+                <i className="fas fa-pencil-alt mt-0"></i>
+              </button>
+            </Link>
           </div>
         </MDBTable>
       </MDBCardBody>
